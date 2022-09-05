@@ -1,0 +1,420 @@
+a {
+  text-decoration: none;
+}
+/************ Teams Start ************/
+.teams {
+    padding: 2%;
+    position: relative;
+    background-color: black;
+}
+
+.teams_text {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.16em;
+    margin-bottom: 2%;
+}
+
+.teams_text span {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    letter-spacing: 0em;
+}
+
+.teams-bx {
+    background: #151515;
+    border-radius: 64px;
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.teams h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.teams p {
+    color: #B8B8B8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 0 75px 0;
+}
+
+.teams-slider {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.teams-slider .item img {
+    width: 50%;
+    margin: 0 auto 15px auto;
+    filter: grayscale(100%);
+}
+
+.teams-slider .item img:hover {
+    filter: grayscale(0%);
+}
+
+.background-image-left {
+    top: 28%;
+    position: absolute;
+    bottom: 0;
+    width: 40%;
+    z-index: -4;
+}
+
+.item a {
+    color: #B8B8B8;
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: #ff111e;
+}
+/************ Teams END ************/
+
+/************ News Start ************/
+.news {
+    padding: 30px 0;
+    position: relative;
+    background-color: black;
+  }
+  
+  .news h2 {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .news p {
+    color: #B8B8B8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px auto 30px auto;
+    text-align: center;
+    width: 56%;
+  }
+  
+  .news .nav.nav-pills {
+    width: 72%;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: rgb(255 255 255 / 10%);
+    overflow: hidden;
+  }
+  
+  .news .nav.nav-pills .nav-item {
+    width: 33.33333%;
+  }
+  
+  .news .nav.nav-pills .nav-link {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 17px 0;
+    color: #fff;
+    width: 100%;
+    font-size: 17px;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    z-index: 0;
+  }
+  
+  .news .nav.nav-pills .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-image: linear-gradient(180deg, #ff111e 5%, #ab0000 95%);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .news .nav.nav-pills .nav-link.active::before {
+    width: 100% !important;
+  }
+  
+  .news .nav.nav-pills .nav-link.active {
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+  
+  .nav-link#news-tabs-tab-first {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 55px 0px 0px 55px;
+  }
+  
+  .nav-link#news-tabs-tab-second {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .nav-link#news-tabs-tab-third {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0 55px 55px 0;
+  }
+  
+  .background-image-right {
+    top: 20%;
+    position: absolute;
+    bottom: 0;
+    width: 35%;
+    right: 0;
+    z-index: -4;
+  }
+  /************ News END ************/
+  
+  /************ News Card Start ************/
+  .news_text {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.16em;
+    margin: 2%;
+  }
+  
+  .news_text span {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    letter-spacing: 0em;
+  }
+  
+  .news_img {
+    object-fit: cover;
+    transition: transform .4s;
+  }
+  
+  .news_img:hover {
+    transform: scale(1.1);
+  }
+  
+  .news_title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    width: auto;
+    word-wrap: break-word;
+  }
+  
+  .news_title a {
+    color: #B8B8B8;
+    text-decoration: none;
+  }
+  
+  .news_title a:hover {
+    color: #ff111e;
+  }
+  
+  .news_tag_ul {
+    list-style-type: none;
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .news_tag_li {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    min-width: 100px;
+    padding: 0 11px;
+    border-radius: 30px;
+    text-align: center;
+    color: #FFF;
+    background: #ff111e;
+  }
+
+  .news_date_li {
+    margin-left: 2%;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    min-width: 120px;
+    padding: 10 11px;
+    border-radius: 30px;
+    text-align: center;
+    color: #FFF;
+    background: #ff111e;
+  }
+  
+  .news_imgbox {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  
+  .news_imgbox::before {
+    opacity: 0.85;
+    position: absolute;
+    width: 100%;
+    height: 0;
+  }
+  
+  .news_imgbox:hover::before {
+    height: 100%;
+  }
+  /************ News Card END ************/
+  
+  /************ See More Button Start ************/
+  .news_btn {
+    display: flex;
+    justify-content: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.10em;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 30px;
+    color: #FFF;
+    background-image: linear-gradient(180deg, #ff111e 5%, #ab0000 95%);
+  }
+  
+  .news_btn:hover {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 1%;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-radius: 30px;
+    color: #FFF;
+    background: none;
+  }
+  
+  .news_btn:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, #ff111e 5%, #ab0000 95%) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+  /************ See More Button END ************/
+
+  /************ Videos Start ************/
+.videos h2 {
+	font-size: 45px;
+	font-weight: 700;
+  text-align: center;
+}
+
+.video_text {
+  font-family: 'Kanit', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.16em;
+  margin-bottom: 2%;
+}
+
+.video_text span {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  letter-spacing: 0em;
+}
+
+.videos_card {
+  list-style-type: none;
+  align-items: center;
+  padding: 0;
+  padding: 0;
+  line-height: 23px;
+  min-width: 100px;
+  text-align: center;
+    
+}
+
+.videos_card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.videos_card::before {
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+}
+
+.videos_card:hover::before {
+  height: 100%;
+}
+
+.videos {
+  max-width: 100%;
+  background-image: url(/src/assets/img/bg.png);
+  padding: 60px 0 200px 0;
+}
+.videos img {
+  width: 92%;
+}
+
+iframe {
+  position: relative;
+  transition: transform .4s;
+  overflow: hidden;
+  border-radius: 30px;
+  object-fit: cover;
+  border-style: solid;
+  border-width: 2px;
+}
+
+iframe:hover {
+  transform: scale(1.1);
+}
+/************ Videos END ************/
+
+@media screen and (max-width: 600px) {
+  iframe {
+    overflow: hidden;
+  }
+}

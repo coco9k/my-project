@@ -1,0 +1,88 @@
+.contact {
+    padding: 60px 0 200px 0;
+    position: relative;
+}
+
+.contact_text {
+  font-family: 'Kanit', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.16em;
+  margin-bottom: 2%;
+}
+
+.contact_text span {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  letter-spacing: 0em;
+}
+
+.form-input {
+  padding: 6px 20px;
+}
+
+.formErrors {
+  margin: 0;
+  padding-top: 6px;
+  color: #ff111e;
+  font-size: 14px;
+}
+
+  /************ See More Button Start ************/
+  .summit_btn {
+    display: flex;
+    justify-content: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.10em;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 30px;
+    color: #FFF;
+    background-image: linear-gradient(180deg, #ff111e 5%, #ab0000 95%);
+  }
+  
+  .summit_btn:hover {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 1%;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-radius: 30px;
+    color: #FFF;
+    background: none;
+  }
+  
+  .summit_btn:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, #ff111e 5%, #ab0000 95%) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+  /************ See More Button END ************/

@@ -1,0 +1,64 @@
+.about {
+    padding: 60px 0 200px 0;
+    position: relative;
+}
+
+.about_text {
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.16em;
+    margin-bottom: 2%;
+}
+
+.about_text span {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #B8B8B8;
+    line-height: 1;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    letter-spacing: 0em;
+    width: auto;
+    word-wrap: break-word;
+}
+
+.about h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.about p {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #B8B8B8;
+    line-height: 1;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    letter-spacing: 0em;
+    width: auto;
+    word-wrap: break-word;
+}
+
+.about a {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #ff111e; 
+    text-decoration: none;
+    width: auto;
+    word-wrap: break-word;
+}
+
+.about a:hover{
+    color: #FA5F55;
+}
