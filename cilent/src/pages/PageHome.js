@@ -169,7 +169,7 @@ export const PageHome = () => {
                                                         {news.map(news => (
                                                             <Col className="news_box" size={12} sm={4} md={4} key={news.id}>
                                                                 <div className="news_imgbox">
-                                                                    <Link to={`/news/${news.id}`}><img className="news_img" src={news.thumbnail} /></Link>
+                                                                    <Link to={`/news/${news.id}`}><img className="news_img" src={news.thumbnail} alt=""  /></Link>
                                                                 </div>
                                                                 <h4 className="news_title"><Link to={`/news/${news.id}`}>{news.title}</Link></h4>
                                                                 <ul className="news_tag_ul">
@@ -190,7 +190,7 @@ export const PageHome = () => {
                                                         {newsgame.map(newsgame => (
                                                                 <Col className="news_box" size={12} sm={4} md={4} key={newsgame.id}>
                                                                     <div className="news_imgbox">
-                                                                        <Link to={`/news/${newsgame.id}`}><img className="news_img" src={newsgame.thumbnail} /></Link>
+                                                                        <Link to={`/news/${newsgame.id}`}><img className="news_img" src={newsgame.thumbnail} alt="" /></Link>
                                                                     </div>
                                                                     <h4 className="news_title"><Link to={`/news/${newsgame.id}`}>{newsgame.title}</Link></h4>
                                                                     <ul className="news_tag_ul">
@@ -211,7 +211,7 @@ export const PageHome = () => {
                                                         {newsofficial.map(newsofficial => (
                                                                 <Col className="news_box" size={12} sm={4} md={4} key={newsofficial.id}>
                                                                     <div className="news_imgbox">
-                                                                        <Link to={`/news/${newsofficial.id}`}><img className="news_img" src={newsofficial.thumbnail} /></Link>
+                                                                        <Link to={`/news/${newsofficial.id}`}><img className="news_img" src={newsofficial.thumbnail} alt=""  /></Link>
                                                                     </div>
                                                                     <h4 className="news_title"><Link to={`/news/${newsofficial.id}`}>{newsofficial.title}</Link></h4>
                                                                     <ul className="news_tag_ul">
