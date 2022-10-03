@@ -1,35 +1,30 @@
+require("dotenv").config()
 var express = require('express')
 var cors = require('cors')
 var app = express()
-var multer = require('multer')
+var bodyParser = require('body-parser')
+const conn = require("./config/db")
 
 app.use(cors())
-const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+const uploadRoute = require('./routes/upload.routes')
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host: 'poolpy.local.com',
-  user: 'root',
-  password: '',
-  database: 'arc_db'
-});
+app.use('/upload', uploadRoute)
+app.use('/uploads', express.static('uploads'))
 
-connection.connect();
-
-app.get('/news', function (req, res, next) {
-  connection.query('SELECT * FROM news', function (error, results, fields) {
+app.get('/posts', function (req, res, next) {
+  conn.query('SELECT * FROM posts', function (error, results, fields) {
     if (error) throw error;
     res.json(results)
   });
 })
 
 app.get('/listpost', function (req, res, next) {
-  connection.query('SELECT * FROM news', function (error, results, fields) {
+  conn.query('SELECT * FROM posts', function (error, results, fields) {
     if (error) throw error;
     res.json(results)
   });
@@ -37,11 +32,11 @@ app.get('/listpost', function (req, res, next) {
 
 app.post('/createpost', function (req, res, next) {
   const title = req.body.title;
-  const thumbnail = req.body.thumbnail;
-  const tag = req.body.tag;
+  const game = req.body.game;
   const category = req.body.category;
+  const detail = req.body.detail;
 
-  connection.query("INSERT INTO news (title, thumbnail, tag, category) VALUES(?,?,?,?)", [title, thumbnail, tag, category],
+  conn.query("INSERT INTO posts (title, game, category, detail) VALUES(?,?,?,?)", [title, game, category, detail],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -49,41 +44,35 @@ app.post('/createpost', function (req, res, next) {
     })
 })
 
-app.get('/news/category/:categoryName', function (req, res, next) {
-  connection.query(`SELECT * FROM news WHERE category = "${req.params.categoryName}" ORDER BY date DESC LIMIT 6`, function (error, results, fields) {
+
+app.get('/posts/category/:categoryName', function (req, res, next) {
+  conn.query(`SELECT * FROM posts WHERE category = "${req.params.categoryName}" ORDER BY date DESC LIMIT 6`, function (error, results, fields) {
     if (error) throw error;
     res.json(results)
   });
 })
 
-app.get('/news/:newsId', function (req, res, next) {
-  connection.query(`SELECT * FROM news WHERE id = "${req.params.newsId}"`, function (error, results, fields) {
+app.get('/posts/:postsId', function (req, res, next) {
+  conn.query(`SELECT * FROM posts WHERE id = "${req.params.postsId}"`, function (error, results, fields) {
     if (error) throw error;
     res.json(results)
   });
 })
 
 app.get('/banner', function (req, res, next) {
-  connection.query('SELECT * FROM banner ORDER BY date DESC LIMIT 3', function (error, results, fields) {
-    if (error) throw error;
-    res.json(results)
-  });
-})
-
-app.get('/videos', function (req, res, next) {
-  connection.query('SELECT * FROM videos', function (error, results, fields) {
+  conn.query('SELECT * FROM banner ORDER BY date DESC LIMIT 3', function (error, results, fields) {
     if (error) throw error;
     res.json(results)
   });
 })
 
 app.get('/teams', function (req, res, next) {
-  connection.query('SELECT * FROM teams', function (error, results, fields) {
+  conn.query('SELECT * FROM teams', function (error, results, fields) {
     if (error) throw error;
     res.json(results)
   });
 })
 
 app.listen(3333, function () {
-  console.log('CORS-enabled web server listening on port 3333')
+  console.log('Server running on PORT 3333')
 })
