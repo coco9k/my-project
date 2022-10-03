@@ -1,0 +1,201 @@
+/************ Posts Start ************/
+.posts-page {
+  padding: 60px 0 200px 0;
+  position: relative;
+}
+
+.posts-page h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.posts-page p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+
+.posts_box {
+  margin-bottom: 2%;
+}
+
+.posts-page .nav.nav-pills {
+  width: 72%;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: rgb(255 255 255 / 10%);
+  overflow: hidden;
+}
+
+.posts-page .nav.nav-pills .nav-item {
+  width: 33.33333%;
+}
+
+.posts-page .nav.nav-pills .nav-link {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 17px 0;
+  color: #fff;
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  z-index: 0;
+}
+
+.posts-page .nav.nav-pills .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-image: linear-gradient(180deg, #ff111e 5%, #ab0000 95%);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.posts-page .nav.nav-pills .nav-link.active::before {
+  width: 100% !important;
+}
+
+.posts-page .nav.nav-pills .nav-link.active {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.nav-link#posts-tabs-tab-first {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 55px 0px 0px 55px;
+}
+
+.nav-link#posts-tabs-tab-second {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-link#posts-tabs-tab-third {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 55px 55px 0;
+}
+
+.background-image-right {
+  top: 20%;
+  position: absolute;
+  bottom: 0;
+  width: 35%;
+  right: 0;
+  z-index: -4;
+}
+
+/************ Posts END ************/
+
+/************ Posts Single Page Start ************/
+.posts-single-page {
+  padding: 60px 0 200px 0;
+  position: relative;
+}
+
+.posts_single_pag_title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.posts_single_pag_detail {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #B8B8B8;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  letter-spacing: 0em;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.posts_single_pag_detail b{
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.posts_single_pag_detail strong{
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.posts_single_pag_detail img{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: auto;
+}
+
+.posts_single_pag_title h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.posts_single_pag_detail p {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #B8B8B8;
+  line-height: 1;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  letter-spacing: 0em;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.posts_single_pag_detail a {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #ff111e;
+  text-decoration: none;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.posts_single_pag_detail a:hover {
+  color: #FA5F55;
+}
+
+/************ Posts Single Page END ************/
+
+/************ Search Start ************/
+.input_search {
+  display: flex;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 3%;
+  padding: 1%;
+  border-radius: 30px;
+  color: #ff111e;
+  width: 100%;
+  text-align: center;
+}
+
+/************ Search END ************/

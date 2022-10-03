@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { News } from "./components/News";
-import { NewsSinglePage } from "./components/NewsSinglePage";
+import { Posts } from "./components/Posts";
+import { PostsSinglePage } from "./components/PostsSinglePage";
 import { NavBar } from "./components/NavBar";
 import { PageHome } from "./pages/PageHome";
 import { PageAbout } from "./pages/PageAbout";
@@ -23,8 +23,8 @@ function App() {
           <Route path="/about" element={<PageAbout />} />
           <Route path="/tournament" element={<PageTournament />} />
           <Route path="/contact" element={<PageContact />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:newsId" element={<NewsSinglePage />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/posts/:postsId" element={<PostsSinglePage />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />

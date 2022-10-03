@@ -84,20 +84,20 @@ a {
 }
 /************ Teams END ************/
 
-/************ News Start ************/
-.news {
+/************ Posts Start ************/
+.posts {
     padding: 30px 0;
     position: relative;
     background-color: black;
   }
   
-  .news h2 {
+  .posts h2 {
     font-size: 45px;
     font-weight: 700;
     text-align: center;
   }
   
-  .news p {
+  .posts p {
     color: #B8B8B8;
     font-size: 18px;
     letter-spacing: 0.8px;
@@ -107,7 +107,7 @@ a {
     width: 56%;
   }
   
-  .news .nav.nav-pills {
+  .posts .nav.nav-pills {
     width: 72%;
     margin: 0 auto;
     border-radius: 50px;
@@ -115,11 +115,11 @@ a {
     overflow: hidden;
   }
   
-  .news .nav.nav-pills .nav-item {
+  .posts .nav.nav-pills .nav-item {
     width: 33.33333%;
   }
   
-  .news .nav.nav-pills .nav-link {
+  .posts .nav.nav-pills .nav-link {
     background-color: transparent;
     border-radius: 0;
     padding: 17px 0;
@@ -134,7 +134,7 @@ a {
     z-index: 0;
   }
   
-  .news .nav.nav-pills .nav-link::before {
+  .posts .nav.nav-pills .nav-link::before {
     content: "";
     position: absolute;
     width: 0;
@@ -146,25 +146,25 @@ a {
     transition: 0.3s ease-in-out;
   }
   
-  .news .nav.nav-pills .nav-link.active::before {
+  .posts .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
   }
   
-  .news .nav.nav-pills .nav-link.active {
+  .posts .nav.nav-pills .nav-link.active {
     border: 1px solid rgba(255, 255, 255, 1);
   }
   
-  .nav-link#news-tabs-tab-first {
+  .nav-link#posts-tabs-tab-first {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 55px 0px 0px 55px;
   }
   
-  .nav-link#news-tabs-tab-second {
+  .nav-link#posts-tabs-tab-second {
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   
-  .nav-link#news-tabs-tab-third {
+  .nav-link#posts-tabs-tab-third {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0 55px 55px 0;
   }
@@ -177,10 +177,10 @@ a {
     right: 0;
     z-index: -4;
   }
-  /************ News END ************/
+  /************ Posts END ************/
   
-  /************ News Card Start ************/
-  .news_text {
+  /************ Posts Card Start ************/
+  .posts_text {
     font-family: 'Kanit', sans-serif;
     font-size: 4rem;
     font-weight: 700;
@@ -190,7 +190,7 @@ a {
     margin: 2%;
   }
   
-  .news_text span {
+  .posts_text span {
     font-family: 'Kanit', sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -202,32 +202,32 @@ a {
     letter-spacing: 0em;
   }
   
-  .news_img {
+  .posts_img {
     object-fit: cover;
     transition: transform .4s;
   }
   
-  .news_img:hover {
+  .posts_img:hover {
     transform: scale(1.1);
   }
   
-  .news_title {
+  .posts_title {
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
     width: auto;
     word-wrap: break-word;
   }
   
-  .news_title a {
+  .posts_title a {
     color: #B8B8B8;
     text-decoration: none;
   }
   
-  .news_title a:hover {
+  .posts_title a:hover {
     color: #ff111e;
   }
   
-  .news_tag_ul {
+  .posts_tag_ul {
     list-style-type: none;
     display: -webkit-box;
     display: flex;
@@ -235,7 +235,7 @@ a {
     padding: 0;
   }
   
-  .news_tag_li {
+  .posts_tag_li {
     font-family: 'Kanit', sans-serif;
     font-size: 1rem;
     line-height: 23px;
@@ -247,7 +247,7 @@ a {
     background: #ff111e;
   }
 
-  .news_date_li {
+  .posts_date_li {
     margin-left: 2%;
     font-family: 'Kanit', sans-serif;
     font-size: 1rem;
@@ -260,27 +260,27 @@ a {
     background: #ff111e;
   }
   
-  .news_imgbox {
+  .posts_imgbox {
     position: relative;
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 24px;
   }
   
-  .news_imgbox::before {
+  .posts_imgbox::before {
     opacity: 0.85;
     position: absolute;
     width: 100%;
     height: 0;
   }
   
-  .news_imgbox:hover::before {
+  .posts_imgbox:hover::before {
     height: 100%;
   }
-  /************ News Card END ************/
+  /************ Posts Card END ************/
   
   /************ See More Button Start ************/
-  .news_btn {
+  .posts_btn {
     display: flex;
     justify-content: center;
     font-family: 'Kanit', sans-serif;
@@ -298,7 +298,7 @@ a {
     background-image: linear-gradient(180deg, #ff111e 5%, #ab0000 95%);
   }
   
-  .news_btn:hover {
+  .posts_btn:hover {
     font-family: 'Kanit', sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -312,7 +312,7 @@ a {
     background: none;
   }
   
-  .news_btn:hover::before {
+  .posts_btn:hover::before {
     content: "";
     position: absolute;
     top: 0;
@@ -367,38 +367,14 @@ a {
   padding: 0;
   line-height: 23px;
   min-width: 100px;
-  text-align: center;
-    
-}
-
-.videos_card {
-  position: relative;
+  text-align: center; 
+  osition: relative;
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
 }
 
-.videos_card::before {
-  opacity: 0.85;
-  position: absolute;
-  width: 100%;
-  height: 0;
-}
-
-.videos_card:hover::before {
-  height: 100%;
-}
-
-.videos {
-  max-width: 100%;
-  background-image: url(/src/assets/img/bg.png);
-  padding: 60px 0 200px 0;
-}
-.videos img {
-  width: 92%;
-}
-
-iframe {
+.videos_card {
   position: relative;
   transition: transform .4s;
   overflow: hidden;
@@ -408,13 +384,52 @@ iframe {
   border-width: 2px;
 }
 
-iframe:hover {
+.videos_card:hover {
   transform: scale(1.1);
 }
+
+.videos_card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.videos {
+  max-width: 100%;
+  background-image: url(/src/assets/img/bg.png);
+  padding: 60px 0 200px 0;
+}
+
 /************ Videos END ************/
 
+@media screen and (max-width: 992px) {
+  .videos_card img {
+    width: 100%;
+    height: 169px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .videos_card img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+  }
+}
+
 @media screen and (max-width: 600px) {
-  iframe {
-    overflow: hidden;
+  .videos_card img {
+    width: 100%;
+    height: 95px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .videos_card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
 }

@@ -34,36 +34,37 @@ export const PageHome = () => {
             )
     }, [])
 
-    const [news, setNews] = useState([]);
-    const [newsgame, setNewsgame] = useState([]);
-    const [newsofficial, setNewsofficial] = useState([]);
+    const [posts, setPosts] = useState([]);
+    const [postsgame, setPostsgame] = useState([]);
+    const [postsofficial, setPostsofficial] = useState([]);
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
-        fetch("http://localhost:3333/news")
-          .then(res => res.json())
-          .then(
-            (result) => {
-              setNews(result);
-            }
-          )
-      }, [])
-
-    useEffect(() => {
-        fetch("http://localhost:3333/news/category/Games")
+        fetch("http://localhost:3333/posts")
             .then(res => res.json())
             .then(
                 (result) => {
-                    setNewsgame(result);
+                    setPosts(result);
                 }
             )
     }, [])
 
     useEffect(() => {
-        fetch("http://localhost:3333/news/category/Official")
+        fetch("http://localhost:3333/posts/category/Games")
             .then(res => res.json())
             .then(
                 (result) => {
-                    setNewsofficial(result);
+                    setPostsgame(result);
+                }
+            )
+    }, [])
+
+    useEffect(() => {
+        fetch("http://localhost:3333/posts/category/Official")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setPostsofficial(result);
                 }
             )
     }, [])
@@ -71,14 +72,21 @@ export const PageHome = () => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3333/videos")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setVideos(result.slice(-6));
-                }
+        const APIKEY = "AIzaSyD4hAKPef3H83KIS_YFLUtQ8gLIxHezr9A"
+        const url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC98DSvjg_7iV8UY7UYW8OKg&maxResults=6&order=date&key=${APIKEY}`
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          
+          fetch(url , requestOptions)
+          .then(res => res.json())
+          .then(
+            (result) => {
+                setVideos(result.items);
+            }
             )
-    }, [])
+        }, [])
 
     const responsive = {
         superLargeDesktop: {
@@ -107,12 +115,12 @@ export const PageHome = () => {
                 <Carousel style={{ maxWidth: '100%' }}>
                     {banner.map((banner, index) => (
                         <Carousel.Item key={index}>
-                            <Link to="/news" target="_blank" rel="noreferrer">
-                                    <img
-                                        className="d-block w-100"
-                                        src={banner.banner_image}
-                                        alt={banner.alt}
-                                    />
+                            <Link to="/posts" target="_blank" rel="noreferrer">
+                                <img
+                                    className="d-block w-100"
+                                    src={banner.banner_image}
+                                    alt={banner.alt}
+                                />
                             </Link>
                         </Carousel.Item>
                     ))}
@@ -141,17 +149,17 @@ export const PageHome = () => {
                     </Row>
                 </Container>
             </div>
-            <div className="news" id="news">
+            <div className="posts" id="posts">
                 <Container>
                     <Row>
                         <Col size={12}>
                             <TrackVisibility>
                                 {({ isVisible }) =>
                                     <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                        <h2 className="news_text">NEWS
+                                        <h2 className="posts_text">NEWS
                                             <span>ข่าว</span>
                                         </h2>
-                                        <Tab.Container id="news-tabs" defaultActiveKey="first">
+                                        <Tab.Container id="posts-tabs" defaultActiveKey="first">
                                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                                 <Nav.Item>
                                                     <Nav.Link eventKey="first">News</Nav.Link>
@@ -166,64 +174,88 @@ export const PageHome = () => {
                                             <Tab.Content id="slideInUp">
                                                 <Tab.Pane eventKey="first">
                                                     <Row>
-                                                        {news.map(news => (
-                                                            <Col className="news_box" size={12} sm={4} md={4} key={news.id}>
-                                                                <div className="news_imgbox">
-                                                                    <Link to={`/news/${news.id}`}><img className="news_img" src={news.thumbnail} alt=""  /></Link>
-                                                                </div>
-                                                                <h4 className="news_title"><Link to={`/news/${news.id}`}>{news.title}</Link></h4>
-                                                                <ul className="news_tag_ul">
-                                                                    <li className="news_tag_li">{news.tag}</li>
-                                                                    <li className="news_date_li">{news.date.slice(0, 10)}</li>
-                                                                </ul>
-                                                            </Col>
-                                                        ))}
+                                                        <input className="input_search" type="text" placeholder='Search...' onChange={(e) => setSearch(e.target.value)} />
+                                                        {posts.filter((value) => {
+                                                            if (search === "") {
+                                                                return value
+                                                            } else if (value.title.toLowerCase().includes(search.toLowerCase())) {
+                                                                return value
+                                                            }
+                                                        })
+                                                            .map(posts => (
+                                                                <Col className="posts_box" size={12} sm={4} md={4} key={posts.id}>
+                                                                    <div className="posts_imgbox">
+                                                                        <Link to={`/posts/${posts.id}`}><img className="posts_img" src={posts.thumbnail} alt={posts.title} /></Link>
+                                                                    </div>
+                                                                    <h4 className="posts_title"><Link to={`/posts/${posts.id}`}>{posts.title}</Link></h4>
+                                                                    <ul className="posts_tag_ul">
+                                                                        <li className="posts_tag_li">{posts.game}</li>
+                                                                        <li className="posts_date_li">{posts.date.slice(0, 10)}</li>
+                                                                    </ul>
+                                                                </Col>
+                                                            ))}
                                                     </Row>
-                                                    <Link to="/news">
+                                                    <Link to="/posts">
                                                         <Col style={{ display: "flex", justifyContent: "center" }}>
-                                                            <button className="news_btn news_btn_gradient">See More</button>
+                                                            <button className="posts_btn posts_btn_gradient">See More</button>
                                                         </Col>
                                                     </Link>
                                                 </Tab.Pane>
                                                 <Tab.Pane eventKey="second">
                                                     <Row>
-                                                        {newsgame.map(newsgame => (
-                                                                <Col className="news_box" size={12} sm={4} md={4} key={newsgame.id}>
-                                                                    <div className="news_imgbox">
-                                                                        <Link to={`/news/${newsgame.id}`}><img className="news_img" src={newsgame.thumbnail} alt="" /></Link>
+                                                        <input className="input_search" type="text" placeholder='Search...' onChange={(e) => setSearch(e.target.value)} />
+                                                        {postsgame.filter((value) => {
+                                                            if (search === "") {
+                                                                return value
+                                                            } else if (value.title.toLowerCase().includes(search.toLowerCase())) {
+                                                                return value
+                                                            }
+                                                        })
+                                                            .map(postsgame => (
+                                                                <Col className="posts_box" size={12} sm={4} md={4} key={postsgame.id}>
+                                                                    <div className="posts_imgbox">
+                                                                        <Link to={`/posts/${postsgame.id}`}><img className="posts_img" src={postsgame.thumbnail} alt={posts.title} /></Link>
                                                                     </div>
-                                                                    <h4 className="news_title"><Link to={`/news/${newsgame.id}`}>{newsgame.title}</Link></h4>
-                                                                    <ul className="news_tag_ul">
-                                                                        <li className="news_tag_li">{newsgame.tag}</li>
-                                                                        <li className="news_date_li">{newsgame.date.slice(0, 10)}</li>
+                                                                    <h4 className="posts_title"><Link to={`/posts/${postsgame.id}`}>{postsgame.title}</Link></h4>
+                                                                    <ul className="posts_tag_ul">
+                                                                        <li className="posts_tag_li">{postsgame.game}</li>
+                                                                        <li className="posts_date_li">{postsgame.date.slice(0, 10)}</li>
                                                                     </ul>
                                                                 </Col>
                                                             ))}
                                                     </Row>
-                                                    <Link to="/news">
+                                                    <Link to="/posts">
                                                         <Col style={{ display: "flex", justifyContent: "center" }}>
-                                                            <button className="news_btn news_btn_gradient">See More</button>
+                                                            <button className="posts_btn posts_btn_gradient">See More</button>
                                                         </Col>
                                                     </Link>
                                                 </Tab.Pane>
                                                 <Tab.Pane eventKey="third">
-                                                <Row>
-                                                        {newsofficial.map(newsofficial => (
-                                                                <Col className="news_box" size={12} sm={4} md={4} key={newsofficial.id}>
-                                                                    <div className="news_imgbox">
-                                                                        <Link to={`/news/${newsofficial.id}`}><img className="news_img" src={newsofficial.thumbnail} alt=""  /></Link>
+                                                    <Row>
+                                                        <input className="input_search" type="text" placeholder='Search...' onChange={(e) => setSearch(e.target.value)} />
+                                                        {postsofficial.filter((value) => {
+                                                            if (search === "") {
+                                                                return value
+                                                            } else if (value.title.toLowerCase().includes(search.toLowerCase())) {
+                                                                return value
+                                                            }
+                                                        })
+                                                            .map(postsofficial => (
+                                                                <Col className="posts_box" size={12} sm={4} md={4} key={postsofficial.id}>
+                                                                    <div className="posts_imgbox">
+                                                                        <Link to={`/posts/${postsofficial.id}`}><img className="posts_img" src={postsofficial.thumbnail} alt={posts.title} /></Link>
                                                                     </div>
-                                                                    <h4 className="news_title"><Link to={`/news/${newsofficial.id}`}>{newsofficial.title}</Link></h4>
-                                                                    <ul className="news_tag_ul">
-                                                                        <li className="news_tag_li">{newsofficial.tag}</li>
-                                                                        <li className="news_date_li">{newsofficial.date.slice(0, 10)}</li>
+                                                                    <h4 className="posts_title"><Link to={`/posts/${postsofficial.id}`}>{postsofficial.title}</Link></h4>
+                                                                    <ul className="posts_tag_ul">
+                                                                        <li className="posts_tag_li">{postsofficial.game}</li>
+                                                                        <li className="posts_date_li">{postsofficial.date.slice(0, 10)}</li>
                                                                     </ul>
                                                                 </Col>
                                                             ))}
                                                     </Row>
-                                                    <Link to="/news">
+                                                    <Link to="/posts">
                                                         <Col style={{ display: "flex", justifyContent: "center" }}>
-                                                            <button className="news_btn news_btn_gradient">See More</button>
+                                                            <button className="posts_btn posts_btn_gradient">See More</button>
                                                         </Col>
                                                     </Link>
                                                 </Tab.Pane>
@@ -243,10 +275,10 @@ export const PageHome = () => {
                         <h2 className="video_text">LATEST VIDEOS
                             <span>วิดีโอล่าสุด</span>
                         </h2>
-                        {videos.map(videos => (
+                        {videos.map((videos, index) => (
                             <Col size={12} sm={4} md={4} key={videos.id}>
                                 <div className="videos_card">
-                                    <iframe src={"https://www.youtube-nocookie.com/embed/" + videos.video_link} />
+                                    <a href={'https://www.youtube.com/watch?v='+`${videos.id.videoId}`} target="_blank"><img src={videos.snippet.thumbnails.high.url} alt={videos.snippet.title} /></a>
                                 </div>
                             </Col>
                         ))}
