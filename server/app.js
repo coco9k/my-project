@@ -1,15 +1,15 @@
 require("dotenv").config()
-var express = require('express')
-var cors = require('cors')
-var app = express()
-var bodyParser = require('body-parser')
-const conn = require("./config/db")
+const express = require('express')
+const cors = require('cors')
+const app = express()
+const bodyParser = require('body-parser')
+const conn = require('./config/db')
 
 app.use(cors())
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
-}));
+}))
 
 const uploadRoute = require('./routes/upload.routes')
 
@@ -35,8 +35,10 @@ app.post('/createpost', function (req, res, next) {
   const game = req.body.game;
   const category = req.body.category;
   const detail = req.body.detail;
+  const date = req.body.date;
+  console.log(date)
 
-  conn.query("INSERT INTO posts (title, game, category, detail) VALUES(?,?,?,?)", [title, game, category, detail],
+  conn.query("INSERT INTO posts (title, game, category, detail, date) VALUES(?,?,?,?,?)", [title, game, category, detail, date],
     (err, result) => {
       if (err) {
         console.log(err);
