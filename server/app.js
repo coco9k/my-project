@@ -4,14 +4,13 @@ const cors = require('cors')
 const app = express()
 const bodyParser = require('body-parser')
 const conn = require('./config/db')
+const uploadRoute = require('./routes/upload.routes')
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }))
-
-const uploadRoute = require('./routes/upload.routes')
 
 app.use('/upload', uploadRoute)
 app.use('/uploads', express.static('uploads'))
@@ -31,21 +30,20 @@ app.get('/listpost', function (req, res, next) {
 })
 
 app.post('/createpost', function (req, res, next) {
-  const title = req.body.title;
-  const game = req.body.game;
-  const category = req.body.category;
-  const detail = req.body.detail;
-  const date = req.body.date;
-  console.log(date)
+  const id = req.body.id
+  const title = req.body.title
+  const game = req.body.game
+  const category = req.body.category
+  const detail = req.body.detail
+  const date = req.body.date
 
-  conn.query("INSERT INTO posts (title, game, category, detail, date) VALUES(?,?,?,?,?)", [title, game, category, detail, date],
+  conn.query("INSERT INTO posts (id, title, game, category, detail, date) VALUES(?,?,?,?,?,?)", [id, title, game, category, detail, date],
     (err, result) => {
       if (err) {
         console.log(err);
       }
     })
 })
-
 
 app.get('/posts/category/:categoryName', function (req, res, next) {
   conn.query(`SELECT * FROM posts WHERE category = "${req.params.categoryName}" ORDER BY date DESC LIMIT 6`, function (error, results, fields) {
