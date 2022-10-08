@@ -9,10 +9,8 @@ const bannerRoute = require('./routes/banner.routes')
 const teamsRoute = require('./routes/teams.routes')
 
 app.use(cors())
+
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
 
 app.use('/posts', postsRoute)
 
