@@ -1,0 +1,77 @@
+.card-body-table {
+    overflow: scroll;
+}
+
+.title p {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.detail p {
+    width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.icon-custom-size {
+    height: 1.5rem;
+}
+
+.btn-save {
+    margin-top: 15px;
+}
+
+.ck.ck-editor__editable_inline {
+    min-height: 300px;
+}
+
+.ck-source-editing-area {
+    min-height: 300px;
+}
+
+.form-control {
+    font-weight: 300;
+}
+
+.form-select {
+    font-weight: 300;
+}
+
+option {
+    font-weight: 300;
+}
+
+.tag-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 30px;
+    border: 1px solid var(--cui-input-border-color, #b1b7c1);
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: #4f5050;
+    border: 1px solid var(--cui-input-border-color, #b1b7c1);
+    border-radius: 5px;
+    height: 25px;
+    margin: 2px 5px 2px 0px;
+  }
+  
+  .tag-container input {
+    font-weight: 300;
+    border: none;
+    flex: 1;
+    outline: none;
+    padding: 5;
+  }
+  .tag span {
+    margin-left: 5px;
+    cursor: pointer;
+  }
