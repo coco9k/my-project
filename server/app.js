@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use('/posts', postsRoute)
 
-app.use('/upload', uploadRoute)
+app.use('/uploads', uploadRoute)
 
 app.use('/uploads', express.static('uploads'))
 

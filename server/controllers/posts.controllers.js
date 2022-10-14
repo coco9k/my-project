@@ -14,12 +14,10 @@ const create = (req, res) => {
   const category = req.body.category
   const detail = req.body.detail
   const date = req.body.date
-    conn.query("INSERT INTO posts (id, title, game, category, detail, thumbnail, date) VALUES(?,?,?,?,?,?,?)", [id, title, game, category, detail, req.file.path, date],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-    })
+    conn.query("INSERT INTO posts (id, title, game, category, detail, thumbnail, date) VALUES(?,?,?,?,?,?,?)", [id, title, game, category, detail, req.file.path, date], function (error, results, fields) {
+      if (error) throw error
+        res.json(results)
+      })
   }
 
 const read = (req, res) => {
