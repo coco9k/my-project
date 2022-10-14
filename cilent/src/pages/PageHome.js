@@ -185,7 +185,7 @@ export const PageHome = () => {
                                                             .map(posts => (
                                                                 <Col className="posts_box" size={12} sm={4} md={4} key={posts.id}>
                                                                     <div className="posts_imgbox">
-                                                                        <Link to={`/posts/${posts.id}`}><img className="posts_img" src={posts.thumbnail} alt={posts.title} /></Link>
+                                                                        <Link to={`/posts/${posts.id}`}><img className="posts_img" src={`http://localhost:3333/${posts.thumbnail}`} alt={posts.title} /></Link>
                                                                     </div>
                                                                     <h4 className="posts_title"><Link to={`/posts/${posts.id}`}>{posts.title}</Link></h4>
                                                                     <ul className="posts_tag_ul">
@@ -214,7 +214,7 @@ export const PageHome = () => {
                                                             .map(postsgame => (
                                                                 <Col className="posts_box" size={12} sm={4} md={4} key={postsgame.id}>
                                                                     <div className="posts_imgbox">
-                                                                        <Link to={`/posts/${postsgame.id}`}><img className="posts_img" src={postsgame.thumbnail} alt={posts.title} /></Link>
+                                                                        <Link to={`/posts/${postsgame.id}`}><img className="posts_img" src={`http://localhost:3333/${postsgame.thumbnail}`} alt={posts.title} /></Link>
                                                                     </div>
                                                                     <h4 className="posts_title"><Link to={`/posts/${postsgame.id}`}>{postsgame.title}</Link></h4>
                                                                     <ul className="posts_tag_ul">
@@ -243,7 +243,7 @@ export const PageHome = () => {
                                                             .map(postsofficial => (
                                                                 <Col className="posts_box" size={12} sm={4} md={4} key={postsofficial.id}>
                                                                     <div className="posts_imgbox">
-                                                                        <Link to={`/posts/${postsofficial.id}`}><img className="posts_img" src={postsofficial.thumbnail} alt={posts.title} /></Link>
+                                                                        <Link to={`/posts/${postsofficial.id}`}><img className="posts_img" src={`http://localhost:3333/${postsofficial.thumbnail}`} alt={posts.title} /></Link>
                                                                     </div>
                                                                     <h4 className="posts_title"><Link to={`/posts/${postsofficial.id}`}>{postsofficial.title}</Link></h4>
                                                                     <ul className="posts_tag_ul">
