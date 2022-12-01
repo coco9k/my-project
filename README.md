@@ -13,6 +13,8 @@
 - use API with third-party
 
 # Feature Dashboard
+Responsive UI:heavy_check_mark:
+
 Posts:heavy_check_mark:
   - Create
   - Read
