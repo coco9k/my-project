@@ -19,16 +19,16 @@ Posts:heavy_check_mark:
   - Update
   - Delete
   
-Banner:x: [Under development]
+Banner:x: [In Process]
   - Create
   - Read
   - Update
   - Delete
   
-Users:x: [Under development]
+Users:x: [In Process]
   - Create
   - Read
   - Update
   - Delete
   
-Charts :x:[Under development]
+Charts :x:[In Process]
