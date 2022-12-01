@@ -13,7 +13,7 @@
 - use API with third-party
 
 # Feature Dashboard
-Posts:heavy_check_mark:, Banner:x:, Users:x:
+Posts:heavy_check_mark:
   - Create
   - Read
   - Update
@@ -31,4 +31,4 @@ Users:x: [Under development]
   - Update
   - Delete
   
- - Charts :x:[Under development]
+Charts :x:[Under development]
